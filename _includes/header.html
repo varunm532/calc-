@@ -1,0 +1,55 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+      .site-header ul {
+          list-style: none;
+          padding: 0;
+          display: flex;
+          justify-content: left;
+      }
+  
+      .site-header ul li {
+          margin-right: 20px;
+      }
+  
+      .site-header ul li:first-child {
+          margin-right: auto;
+      }
+  
+      .nart-movies {
+          font-weight: bold; /* Optionally, make the text bold */
+          font-size: medium;
+      }
+      .navbarclass {
+          width: 1000px;
+      }
+
+      .square {
+        height: 5px;
+        width: 98%;
+        margin: auto;
+        background-color: #dcdcdc;
+      }
+  </style>
+</head>
+<body>
+    <header class="site-header">
+      <div id="header">
+        <nav class="navbarclass">
+          <ul>
+            <li class="nart-movies">Atlas</li>
+            <li class="fork"><a href="{{site.baseurl}}/">Home</a></li>
+            <!-- <li class="fork"><a href="{{site.baseurl}}/compsci">CompSci</a></li> -->
+            <li class="title"><a href="{{site.baseurl}}/stocks   ">Stocks</a></li>
+            <li class="title", id="signin"><a href="{{site.baseurl}}/signin">Sign In</a></li>
+            <li class="title", id="signout"><a href="{{site.baseurl}}/logout">Logout</a></li>
+            <li class="title", id="signup"><a href="{{site.baseurl}}/signup">Sign Up</a></li>
+            <!--<li class="title"><a href="{{ site.github.repository_url }}#readme">View On GitHub</a></li>-->
+          </ul>
+        </nav>
+        <div class="square"></div>
+      </div><!-- end header -->
+    </header>
+</body>
+<!-- <p style="text-align:left; font-family: Arial">NART Movies</p> -->

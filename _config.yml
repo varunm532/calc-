@@ -1,13 +1,11 @@
-title: Projects
+title: The Atlas Index
 description: "August 2023 to June 2024"
 owner_name: varun532
 github_username: varunm532
 github_repo: "calc-"
-baseurl: "/calc-"
+baseurl: "/AtlasIndex"
 remote_theme: jekyll/minima
-minima:
-  social_links:
-    - { platform: github, user_url: "https://github.com/varunm532"}
+
 # remote_theme: pages-themes/dinky@v0.2.0
 # remote_theme: pages-themes/minimal@v0.2.0
 # remote_theme: pages-themes/hacker@v0.2.0
