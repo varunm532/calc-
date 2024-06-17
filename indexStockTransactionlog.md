@@ -5,19 +5,7 @@ permalink: /transactionlog
     <a href="/AtlasIndex/stocks">Back</a>
     <a href="/AtlasIndex/portfolio">Portfolio</a>
     <head>
-    <style>
-            .darkmode {
-                background: #252525;
-                color: #ffffff;
-            }
-            .lightmode {
-                background: #ffffff;
-                color: #000000;
-            }
-        </style>
-        <link id="theme-style" rel="stylesheet" type="text/css" href="assets/css/style.css">
-    </head>
-    <body class="lightmode">
+    <body class="container">
         <table id="stockTable" >
         <thead>
             <tr>
@@ -32,7 +20,9 @@ permalink: /transactionlog
             <!-- Table content will be dynamically populated using JavaScript -->
         </tbody>
         </table>
-        <script>
+        <script type="module">
+        import { uri, options1 } from '/AtlasIndex/assets/js/api/config.js';
+        let options = options1
     var darkMode = false;
     window.onload = function () {
         var themeStyle = document.getElementById('theme-style');
@@ -50,18 +40,22 @@ permalink: /transactionlog
     }
     document.addEventListener("DOMContentLoaded", function () {
         function fetchData() {
-            var url = 'http://localhost:8086/api/stocks/transaction/display'
+            var url = 'http://127.0.0.1:8086/api/stocks/transaction/display'
             const uid = localStorage.getItem("uid");
             var data = {
                 uid: uid
             }
             var json = JSON.stringify(data)
+            //const authOptions = {
+            //    method: 'POST',
+            //    headers: { 'Content-Type': 'application/json' },
+            //    body: json,
+            //    credentials: 'include'
+            //}
             const authOptions = {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: json,
-                credentials: 'include'
-            }
+                            ...options,
+                            body:json,
+                        };
             fetch(url, authOptions)
                 .then(response => response.json())
                 .then(data => {
